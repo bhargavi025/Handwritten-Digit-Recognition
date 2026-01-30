@@ -80,11 +80,12 @@ for epoch in range(epochs):
         
         #forward
         outputs = model(images)
-        loss = loss_fn(outputs, labels)
+        loss = loss_fn(outputs, labels) 
         
+        optimizer.zero_grad()
+
         #backward
         loss.backward()
-        optimizer.zero_grad()
         #gradient descent
         optimizer.step()
         
@@ -133,6 +134,7 @@ print ("User Picked Image Index", index)
 print("Actual Label", true_label) 
 print("Model prediction", predicted_label)
         
+
 
 
 
